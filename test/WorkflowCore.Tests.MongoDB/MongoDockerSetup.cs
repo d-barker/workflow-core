@@ -19,14 +19,14 @@ namespace WorkflowCore.Tests.MongoDB
 
         public override void PublishConnectionInfo()
         {
-            ConnectionString = $"mongodb://localhost:{ExternalPort}";
+            ConnectionString = "mongodb://admin:rise-x-@127.0.0.1:27017/?authSource=admin"; //$"mongodb://localhost:{ExternalPort}";
         }
 
         public override bool TestReady()
         {
             try
             {
-                var client = new MongoClient($"mongodb://localhost:{ExternalPort}");
+                var client = new MongoClient(ConnectionString);
                 client.ListDatabases();
                 return true;
             }
