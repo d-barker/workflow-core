@@ -1,0 +1,179 @@
+{
+  "Fouling": {
+    "inputs": [
+      {
+        "component": "group-slider",
+        "properties": {
+          "id": "clean",
+          "label": "clean",
+          "disabled": false,
+          "options": [
+            "Light",
+            "Medium",
+            "Heavy",
+            "Extreme",
+            "Sporadic"
+          ],
+          "inputs": [
+            "Slime",
+            "Grass",
+            "Barnacles",
+            "Mussels",
+            "Tube Worm"
+          ]
+        }
+      }
+    ]
+  },
+  "Coating System": {
+    "inputs": [
+      {
+        "component": "button-selector",
+        "properties": {
+          "id": "coating",
+          "label": "coating",
+          "options": [
+            "SPC (POLISHING PAINT)",
+            "FRC (SILICONE)",
+            "SPC/SRC (BOTH USED)",
+            "STC (HARD PAINT)",
+            "OTHER"
+          ]
+        }
+      },
+      {
+        "component": "group-slider",
+        "properties": {
+          "id": "intact",
+          "label": "intact",
+          "disabled": false,
+          "options": [
+            "Light",
+            "Medium",
+            "Heavy",
+            "Extreme",
+            "Sporadic"
+          ],
+          "inputs": [
+            "Slime",
+            "Grass",
+            "Barnacles",
+            "Mussels",
+            "Tube Worm"
+          ]
+        }
+      }
+    ]
+  },
+  "Plate/Welds": {
+    "inputs": [
+      {
+        "component": "group-slider",
+        "properties": {
+          "id": "No-Damage-Sighted",
+          "label": "No Damage Sighted",
+          "disabled": false,
+          "options": [
+            "Light",
+            "Medium",
+            "Heavy",
+            "Extreme",
+            "Sporadic"
+          ],
+          "inputs": [
+            "Cavitation",
+            "Pitting",
+            "Corrosion",
+            "Erosion"
+          ]
+        }
+      },
+      {
+        "component": "slider",
+        "properties": {
+          "id": "Depleted",
+          "label": "%Depleted"
+        }
+      },
+      [
+        {
+          "component": "checkbox",
+          "properties": {
+            "id": "All-Anodes-Intact",
+            "label": "All Anodes Intact"
+          }
+        },
+        {
+          "component": "checkbox",
+          "properties": {
+            "id": "Some-Anodes-Missing",
+            "label": "Some Anodes Missing"
+          }
+        }
+      ],
+      [
+        {
+          "component": "select",
+          "properties": {
+            "id": "Please-Select",
+            "label": "Please Select",
+            "options": [
+              "Total",
+              "Per Side",
+              "Propeller Pod",
+              "Stern Tube",
+              "Strut"
+            ]
+          }
+        },
+        {
+          "component": "input",
+          "properties": {
+            "id": "Anodes-Present",
+            "label": "Anodes Present",
+            "type": "number"
+          }
+        }
+      ]
+    ]
+  },
+  "Damage": {
+    "inputs": [
+      [
+        {
+          "component": "checkbox",
+          "properties": {
+            "id": "No-Damage-Sighted",
+            "label": "No Damage Sighted"
+          }
+        },
+        {
+          "component": "checkbox",
+          "properties": {
+            "id": "Previous-Damage-Repairs",
+            "label": "Previous Damage Repairs"
+          }
+        },
+        {
+          "component": "checkbox",
+          "properties": {
+            "id": "Damage-Found",
+            "label": "Damage Found"
+          }
+        }
+      ],
+      {
+        "component": "button-selector",
+        "properties": {
+          "id": "damage-result",
+          "label": "Damage",
+          "options": [
+            "No Damage Sighted",
+            " Previous Damage Repairs",
+            " Damage Found"
+          ]
+        }
+      }
+    ]
+  }
+}

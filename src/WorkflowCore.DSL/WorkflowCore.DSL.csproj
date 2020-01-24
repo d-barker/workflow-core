@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Version>3.1.5</Version>
     <Description>DSL extenstion for Workflow Core provding support for JSON and YAML workflow definitions.</Description>
     <Authors>Daniel Gerlag</Authors>
