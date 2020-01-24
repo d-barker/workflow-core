@@ -77,15 +77,16 @@ namespace WorkflowCore.Providers.Elasticsearch.Services
 
         public async Task Start()
         {
-            _client = new ElasticClient(_settings);
-            var nodeInfo = await _client.NodesInfoAsync();
+            var client = new ElasticClient(_settings);
+            _client = client;
+            var nodeInfo = await client.Nodes.InfoAsync();
             if (nodeInfo.Nodes.Values.Any(x => Convert.ToUInt32(x.Version.Split('.')[0]) < 6))
                 throw new NotSupportedException("Elasticsearch verison 6 or greater is required");
 
-            var exists = await _client.IndexExistsAsync(_indexName);
+            var exists = await client.Indices.ExistsAsync(_indexName);
             if (!exists.Exists)
             {
-                await _client.CreateIndexAsync(_indexName);
+                await _client.Indices.CreateAsync(_indexName);
             }
         }
 
