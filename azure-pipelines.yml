@@ -32,22 +32,21 @@ steps:
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration)'
 
-# - task: DotNetCoreCLI@2
-#   displayName: 'Test Library'
-#   inputs:
-#     command: 'test'
-#     projects: './test/AspNetCore.Identity.MongoDbCore.IntegrationTests/AspNetCore.Identity.MongoDbCore.IntegrationTests.csproj'
-#     arguments: '--configuration $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  displayName: 'Test Library'
+  inputs:
+    command: 'test'
+    projects: './test/WorkflowCore.UnitTests/WorkflowCore.UnitTests.csproj'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Package Library (nuget)'
   inputs:
     command: 'custom'
-    projects: './src/WorkflowCore/WorfklowCore.csproj'
     custom: 'pack'
     #arguments: '--no-build -p:NuspecFile=AspNetCore.Identity.MongoDbCore.nuspec -o  $(build.artifactStagingDirectory)/Nuget --versioningScheme '
-    arguments: '--no-build -o  $(build.artifactStagingDirectory)/Nuget'    
-    verbosityPack: 'Detailed'
+    arguments: './src/WorkflowCore/WorkflowCore.csproj --no-build -o $(build.artifactStagingDirectory)/Nuget'
+    verbosityPack: 'Diagnostic'
 
 - task: NuGetCommand@2
   displayName: 'Publish Library'
