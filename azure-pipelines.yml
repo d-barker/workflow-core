@@ -45,7 +45,8 @@ steps:
     command: 'custom'
     projects: './src/WorkflowCore/WorfklowCore.csproj'
     custom: 'pack'
-    arguments: '--no-build -p:NuspecFile=AspNetCore.Identity.MongoDbCore.nuspec -o  $(build.artifactStagingDirectory)/Nuget --versioningScheme '
+    #arguments: '--no-build -p:NuspecFile=AspNetCore.Identity.MongoDbCore.nuspec -o  $(build.artifactStagingDirectory)/Nuget --versioningScheme '
+    arguments: '--no-build -o  $(build.artifactStagingDirectory)/Nuget'    
     verbosityPack: 'Detailed'
 
 - task: NuGetCommand@2
