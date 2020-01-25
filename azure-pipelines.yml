@@ -45,7 +45,7 @@ steps:
     command: 'custom'
     custom: 'pack'
     #arguments: '--no-build -p:NuspecFile=AspNetCore.Identity.MongoDbCore.nuspec -o  $(build.artifactStagingDirectory)/Nuget --versioningScheme '
-    arguments: './src/WorkflowCore/WorkflowCore.csproj --no-build -o $(build.artifactStagingDirectory)/Nuget'
+    arguments: './src/WorkflowCore/WorkflowCore.csproj --no-build --configuration $(buildConfiguration) -o $(build.artifactStagingDirectory)/Nuget'
     verbosityPack: 'Diagnostic'
 
 - task: NuGetCommand@2
